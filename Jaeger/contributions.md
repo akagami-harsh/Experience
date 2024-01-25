@@ -11,3 +11,6 @@
 | 2023-12-21 | add goleak check in tests that do not fail | [PR link](https://github.com/jaegertracing/jaeger/pull/5025) |
 | 2023-12-19 | ci: add retry logic in the Install Go Tip GitHub Action | [PR link](https://github.com/jaegertracing/jaeger/pull/5022) |
 | 2023-12-17 | Feature: add goleak to check goroutine leak in tests | [PR link](https://github.com/jaegertracing/jaeger/pull/5010) |
+| 2023-11-03 | Remove google.golang.org/protobuf dependency from model & storage APIs | [PR link](https://github.com/jaegertracing/jaeger/pull/4917) |
+| 2023-10-16 | Feature: updating release-note script to validate that all PRs have changelog label  | [PR link](https://github.com/jaegertracing/jaeger/pull/4849) |
+| 2023-10-08 | Add CI validation of shell scripts using shellcheck | [PR link](https://github.com/jaegertracing/jaeger/pull/4826) |
