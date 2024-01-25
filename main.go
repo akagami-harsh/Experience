@@ -7,14 +7,17 @@ import (
 	"strings"
 	"time"
 
+	"github.com/akagami-harsh/Experience/Jaeger"
 	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 )
 
 const (
-	owner    = "jaegertracing"
-	repo     = "jaeger"
-	username = "akagami-harsh"
+	owner          = "jaegertracing"
+	repo           = "jaeger"
+	username       = "akagami-harsh"
+	readmeDataPath = "./Jaeger/readmeData.go"
+	mdFileName     = "./Jaeger/README.md"
 )
 
 func main() {
@@ -55,6 +58,9 @@ func main() {
 	}
 
 	var sb strings.Builder
+	sb.WriteString(Jaeger.Data)
+	sb.WriteString("\n\n")
+
 	sb.WriteString("| Date Created | Title | Pull Request Link |\n")
 	sb.WriteString("| ------------ | ----- | ----------------- |\n")
 
@@ -65,12 +71,11 @@ func main() {
 		sb.WriteString(fmt.Sprintf("| %s | %s | [PR link](%s) |\n", date, title, url))
 	}
 
-	mdFilename := "./Jaeger/contributions.md"
-	err := os.WriteFile(mdFilename, []byte(sb.String()), 0644)
+	err := os.WriteFile(mdFileName, []byte(sb.String()), 0644)
 	if err != nil {
 		fmt.Printf("Error writing markdown file: %v\n", err)
 		return
 	}
 
-	fmt.Printf("Markdown file '%s' created.\n", mdFilename)
+	fmt.Printf("Markdown file '%s' created.\n", mdFileName)
 }
