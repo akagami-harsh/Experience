@@ -25,11 +25,9 @@ More information on the projects can be found on the [JaegerTracing Website
 
 ## Technical Contributions
 
-### [Jaeger
-](https://github.com/jaegertracing/jaeger)
+### [Jaeger](https://github.com/jaegertracing/jaeger)
 
-View all pull requests by me at a glance : [VIEW ALL PULL REQUESTS
-](https://github.com/jaegertracing/jaeger/pulls?q=is%3Apr+author%3Aakagami-harsh+is%3Aclosed)
+View all pull requests by me at a glance : [VIEW ALL PULL REQUESTS](https://github.com/jaegertracing/jaeger/pulls?q=is%3Apr+author%3Aakagami-harsh+is%3Aclosed)
 
 
 | Date Created | Title | Pull Request Link |
