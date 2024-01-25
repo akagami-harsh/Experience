@@ -60,7 +60,7 @@ func main() {
 		date := pr.CreatedAt.Format(time.DateOnly)
 		title := strings.ReplaceAll(*pr.Title, "|", "\\|")
 		url := *pr.HTMLURL
-		sb.WriteString(fmt.Sprintf("| %s | %s | [%s](%s) |\n", date, title, title, url))
+		sb.WriteString(fmt.Sprintf("| %s | %s | [PR link](%s) |\n", date, title, title, url))
 	}
 
 	mdFilename := "./Jaeger/contributions.md"
