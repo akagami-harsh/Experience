@@ -1,7 +1,5 @@
 # Experience
 
-# Internships
-
 This repository contains an overview of all the pull requests I have created/merged 
 
 ## Table of Content
