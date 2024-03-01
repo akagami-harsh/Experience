@@ -32,6 +32,9 @@ View all pull requests by me at a glance : [VIEW ALL PULL REQUESTS](https://gith
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2024-02-20 | Fix groutine leaks in cmd/anonymizer/app/writer | [PR link](https://github.com/jaegertracing/jaeger/pull/5216) |
+| 2024-02-20 | [jaeger-v2] Extend integration tests for memstore | [PR link](https://github.com/jaegertracing/jaeger/pull/5215) |
+| 2024-01-29 | [jaeger-v2] Add support for Elasticsearch | [PR link](https://github.com/jaegertracing/jaeger/pull/5152) |
 | 2024-01-17 | [jaeger-v2] Add support for Badger | [PR link](https://github.com/jaegertracing/jaeger/pull/5112) |
 | 2024-01-11 | Fix flaky test: plugin/storage/badger/samplingstore | [PR link](https://github.com/jaegertracing/jaeger/pull/5094) |
 | 2024-01-03 | Fix goroutine leak in cmd/agent/app/reporter/grpc | [PR link](https://github.com/jaegertracing/jaeger/pull/5075) |
