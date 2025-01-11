@@ -32,6 +32,15 @@ View all pull requests by me at a glance : [VIEW ALL PULL REQUESTS](https://gith
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2024-05-23 | Refactor Elasticsearch Storage Configs | [PR link](https://github.com/jaegertracing/jaeger/pull/5480) |
+| 2024-05-03 | Add Purge method for cassandra | [PR link](https://github.com/jaegertracing/jaeger/pull/5414) |
+| 2024-04-29 | [jaeger-v2] add cassandra e2e integration tests | [PR link](https://github.com/jaegertracing/jaeger/pull/5398) |
+| 2024-04-17 | Add `Purge` method for badger storage | [PR link](https://github.com/jaegertracing/jaeger/pull/5366) |
+| 2024-04-12 | [jaeger-v2] add badger e2e integration test | [PR link](https://github.com/jaegertracing/jaeger/pull/5355) |
+| 2024-04-05 | Create new grpc storage configuration to align with OTEL | [PR link](https://github.com/jaegertracing/jaeger/pull/5331) |
+| 2024-03-21 | [jaeger-v2] Add Elasticsearch storage backend integration test | [PR link](https://github.com/jaegertracing/jaeger/pull/5287) |
+| 2024-03-16 | Remove archive storage factory  | [PR link](https://github.com/jaegertracing/jaeger/pull/5279) |
+| 2024-03-07 | [jaeger-v2] Add support for Opensearch | [PR link](https://github.com/jaegertracing/jaeger/pull/5257) |
 | 2024-02-20 | Fix groutine leaks in cmd/anonymizer/app/writer | [PR link](https://github.com/jaegertracing/jaeger/pull/5216) |
 | 2024-02-20 | [jaeger-v2] Extend integration tests for memstore | [PR link](https://github.com/jaegertracing/jaeger/pull/5215) |
 | 2024-01-29 | [jaeger-v2] Add support for Elasticsearch | [PR link](https://github.com/jaegertracing/jaeger/pull/5152) |

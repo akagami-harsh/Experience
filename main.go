@@ -36,7 +36,7 @@ func main() {
 	client := github.NewClient(tc)
 
 	prs := make([]*github.PullRequest, 0)
-	for i := 1; i <= 3; i++ {
+	for i := 1; i <= 30; i++ {
 		opts := &github.PullRequestListOptions{
 			State:       "closed",
 			Head:        username,
@@ -48,6 +48,7 @@ func main() {
 			return
 		}
 		prs = append(prs, pr...)
+		fmt.Println("Page:", i)
 	}
 
 	filteredPRs := make([]*github.PullRequest, 0)
