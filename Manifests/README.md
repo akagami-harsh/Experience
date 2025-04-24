@@ -26,6 +26,7 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-04-19 | Fix PSS warning for cluster-local-gateway | [PR link](https://github.com/kubeflow/manifests/pull/3108) |
 | 2025-04-08 | Fix Ray version mismatch in test script | [PR link](https://github.com/kubeflow/manifests/pull/3090) |
 | 2025-03-07 | PSS baseline / restricted also for Notebooks, Katib, Kserve and istio-ingressgateway | [PR link](https://github.com/kubeflow/manifests/pull/3042) |
 | 2025-03-02 | Test PSS baseline/restricted for Notebooks, Katib and Kserve | [PR link](https://github.com/kubeflow/manifests/pull/3026) |
