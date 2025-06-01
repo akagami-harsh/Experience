@@ -26,7 +26,9 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-05-24 |  Add SeaweedFS namespace isolation security test to CI | [PR link](https://github.com/kubeflow/manifests/pull/3141) |
 | 2025-05-14 | Apply pss labels from diectly PSS enable scripts | [PR link](https://github.com/kubeflow/manifests/pull/3132) |
+| 2025-05-11 | Remove static PSS files and apply security labels directly in enable PSS scripts | [PR link](https://github.com/kubeflow/manifests/pull/3130) |
 | 2025-05-11 | Use istio cni in pipelines gha | [PR link](https://github.com/kubeflow/manifests/pull/3128) |
 | 2025-04-25 | Fix knative-serving PSS warnings | [PR link](https://github.com/kubeflow/manifests/pull/3118) |
 | 2025-04-19 | Fix PSS warning for cluster-local-gateway | [PR link](https://github.com/kubeflow/manifests/pull/3108) |
