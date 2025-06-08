@@ -26,6 +26,10 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-06-03 | Move dynamic PSS baseline patch to `apps/profiles/` | [PR link](https://github.com/kubeflow/manifests/pull/3157) |
+| 2025-06-02 | Fix seaweedfs PSS warnings | [PR link](https://github.com/kubeflow/manifests/pull/3152) |
+| 2025-06-01 | Apply PSS baseline for profiles namespaces in CI | [PR link](https://github.com/kubeflow/manifests/pull/3150) |
+| 2025-05-28 | Add namespace isolation to V1 pipeline workflows with SeaweedFS integration | [PR link](https://github.com/kubeflow/manifests/pull/3145) |
 | 2025-05-24 |  Add SeaweedFS namespace isolation security test to CI | [PR link](https://github.com/kubeflow/manifests/pull/3141) |
 | 2025-05-14 | Apply pss labels from diectly PSS enable scripts | [PR link](https://github.com/kubeflow/manifests/pull/3132) |
 | 2025-05-11 | Remove static PSS files and apply security labels directly in enable PSS scripts | [PR link](https://github.com/kubeflow/manifests/pull/3130) |
