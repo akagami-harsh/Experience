@@ -26,6 +26,7 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-06-06 | Add swfs test to full_kubeflow_integration_test.yaml | [PR link](https://github.com/kubeflow/manifests/pull/3160) |
 | 2025-06-03 | Move dynamic PSS baseline patch to `apps/profiles/` | [PR link](https://github.com/kubeflow/manifests/pull/3157) |
 | 2025-06-02 | Fix seaweedfs PSS warnings | [PR link](https://github.com/kubeflow/manifests/pull/3152) |
 | 2025-06-01 | Apply PSS baseline for profiles namespaces in CI | [PR link](https://github.com/kubeflow/manifests/pull/3150) |
