@@ -39,6 +39,7 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 | 2025-04-25 | Fix knative-serving PSS warnings | [PR link](https://github.com/kubeflow/manifests/pull/3118) |
 | 2025-04-19 | Fix PSS warning for cluster-local-gateway | [PR link](https://github.com/kubeflow/manifests/pull/3108) |
 | 2025-04-08 | Fix Ray version mismatch in test script | [PR link](https://github.com/kubeflow/manifests/pull/3090) |
+| 2025-03-13 | Fix PSS restricted warnings for kubeflow components | [PR link](https://github.com/kubeflow/manifests/pull/3050) |
 | 2025-03-07 | PSS baseline / restricted also for Notebooks, Katib, Kserve and istio-ingressgateway | [PR link](https://github.com/kubeflow/manifests/pull/3042) |
 | 2025-03-02 | Test PSS baseline/restricted for Notebooks, Katib and Kserve | [PR link](https://github.com/kubeflow/manifests/pull/3026) |
 | 2025-02-27 | Migrate Istio images from DockerHub to GCR | [PR link](https://github.com/kubeflow/manifests/pull/3022) |
