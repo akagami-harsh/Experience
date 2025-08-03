@@ -26,6 +26,7 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-07-30 | Add securityContext patch for kuberay-operator | [PR link](https://github.com/kubeflow/manifests/pull/3200) |
 | 2025-06-25 | Migrate busybox image to ghcr | [PR link](https://github.com/kubeflow/manifests/pull/3174) |
 | 2025-06-06 | Add swfs test to full_kubeflow_integration_test.yaml | [PR link](https://github.com/kubeflow/manifests/pull/3160) |
 | 2025-06-03 | Move dynamic PSS baseline patch to `apps/profiles/` | [PR link](https://github.com/kubeflow/manifests/pull/3157) |
