@@ -26,6 +26,8 @@ View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://githu
 
 | Date Created | Title | Pull Request Link |
 | ------------ | ----- | ----------------- |
+| 2025-09-12 | Update kubeflow/pipelines manifests from 2.14.0 to 2.14.3 | [PR link](https://github.com/kubeflow/manifests/pull/3242) |
+| 2025-09-09 | Default to SeaweedFS instead of MinIO | [PR link](https://github.com/kubeflow/manifests/pull/3240) |
 | 2025-07-30 | Add securityContext patch for kuberay-operator | [PR link](https://github.com/kubeflow/manifests/pull/3200) |
 | 2025-06-25 | Migrate busybox image to ghcr | [PR link](https://github.com/kubeflow/manifests/pull/3174) |
 | 2025-06-06 | Add swfs test to full_kubeflow_integration_test.yaml | [PR link](https://github.com/kubeflow/manifests/pull/3160) |
