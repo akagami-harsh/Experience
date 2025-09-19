@@ -20,8 +20,10 @@ jobs:
       - name: Run PR update script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: go run main.go -owner=kubeflow -repo=manifests \
-             go run main.go -owner=jaeger -repo=jaeger 
+        run: |
+          go run main.go -owner=jaegertracing -repo=jaeger
+          go run main.go -owner=kubeflow -repo=manifests
+          go run main.go -owner=kubeflow -repo=pipelines
 
       - name: Commit and push changes
         run: |

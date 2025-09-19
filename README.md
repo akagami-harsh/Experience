@@ -45,7 +45,7 @@ Google Summer of Code (GSoC) is Google's annual program that connects university
 
 #### My GSoC Journey with Kubeflow
 
-During my GSoC internship with [Kubeflow](https://github.com/kubeflow) (January 2025 - Present), I focused on enhancing the security, infrastructure, and developer experience of the Kubeflow ecosystem. My key contributions included:
+During my GSoC internship with [Kubeflow](https://github.com/kubeflow) (March 2025 - September 2025), I focused on enhancing the security, infrastructure, and developer experience of the Kubeflow ecosystem. My key contributions included:
 
 **🔐 Security Enhancements:**
 - Designed and implemented production-grade deployment of SeaweedFS with multi-tenancy (namespace isolation) as a secure replacement for Minio
