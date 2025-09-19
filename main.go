@@ -48,7 +48,7 @@ const Data = ` + "`" + `
 
 ### [{{.Repo}}](https://github.com/{{.Owner}}/{{.Repo}})
 
-View all pull requests by me at a glance: [VIEW ALL PULL REQUESTS](https://github.com/{{.Owner}}/{{.Repo}}/pulls?q=is%3Apr+author%3A{{.Username}}+is%3Aclosed)
+View all merged pull requests by me at a glance: [VIEW ALL MERGED PULL REQUESTS](https://github.com/{{.Owner}}/{{.Repo}}/pulls?q=is%3Apr+author%3A{{.Username}}+is%3Amerged)
 ` + "`"
 
 func main() {
@@ -69,8 +69,15 @@ func main() {
 	// Create repository directories and configuration
 	repoConfig := setupRepository(owner, repo)
 
-	// Fetch pull requests
-	prs := fetchPullRequests(owner, repo)
+	// Try to fetch pull requests, but handle gracefully if token is missing
+	var prs []*github.PullRequest
+	token := os.Getenv("GITHUB_TOKEN")
+	if token == "" {
+		fmt.Println("Warning: GITHUB_TOKEN not set. Creating basic structure without PR data.")
+		prs = []*github.PullRequest{} // Empty slice
+	} else {
+		prs = fetchPullRequests(owner, repo)
+	}
 
 	// Generate README
 	generateReadme(repoConfig, prs)
@@ -82,9 +89,19 @@ func main() {
 }
 
 func setupRepository(owner, repo string) RepoConfig {
-	// Create a directory for the repository if it doesn't exist
-	dirName := strings.Title(repo)
-	dirPath := filepath.Join(".", dirName)
+	// Create a directory for the repository based on owner
+	var dirPath string
+	var dirName string
+
+	if owner == "kubeflow" {
+		// For kubeflow repositories, create under kubeflow folder
+		dirName = strings.ToLower(repo)
+		dirPath = filepath.Join(".", "kubeflow", dirName)
+	} else {
+		// For other repositories, create at root level
+		dirName = strings.Title(repo)
+		dirPath = filepath.Join(".", dirName)
+	}
 
 	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
 		err = os.MkdirAll(dirPath, 0755)
@@ -100,7 +117,12 @@ func setupRepository(owner, repo string) RepoConfig {
 
 	// Create data file if it doesn't exist
 	if _, err := os.Stat(dataFile); os.IsNotExist(err) {
-		createDataFile(owner, repo, dirName, dataFile)
+		// Use appropriate package name for Go files
+		packageName := dirName
+		if owner == "kubeflow" {
+			packageName = strings.ToLower(repo)
+		}
+		createDataFile(owner, repo, packageName, dataFile)
 	}
 
 	return RepoConfig{
@@ -153,10 +175,7 @@ func createDataFile(owner, repo, packageName, dataFile string) {
 func fetchPullRequests(owner, repo string) []*github.PullRequest {
 	ctx := context.Background()
 	token := os.Getenv("GITHUB_TOKEN")
-	if token == "" {
-		fmt.Println("Set the GITHUB_TOKEN environment variable.")
-		os.Exit(1)
-	}
+	// Token should be checked in main() before calling this function
 
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token},
@@ -187,12 +206,13 @@ func fetchPullRequests(owner, repo string) []*github.PullRequest {
 
 	filteredPRs := make([]*github.PullRequest, 0)
 	for _, pull := range prs {
-		if *pull.User.Login == username {
+		if *pull.User.Login == username && pull.MergedAt != nil {
+			// Only include PRs that are merged (MergedAt is not nil)
 			filteredPRs = append(filteredPRs, pull)
 		}
 	}
 
-	fmt.Printf("Found %d pull requests for %s/%s\n", len(filteredPRs), owner, repo)
+	fmt.Printf("Found %d merged pull requests for %s/%s\n", len(filteredPRs), owner, repo)
 	return filteredPRs
 }
 
@@ -228,11 +248,17 @@ func generateReadme(config RepoConfig, prs []*github.PullRequest) {
 	sb.WriteString(data)
 	sb.WriteString("\n\n")
 
-	sb.WriteString("| Date Created | Title | Pull Request Link |\n")
-	sb.WriteString("| ------------ | ----- | ----------------- |\n")
+	sb.WriteString("| Date Merged | Title | Pull Request Link |\n")
+	sb.WriteString("| ----------- | ----- | ----------------- |\n")
 
 	for _, pr := range prs {
-		date := pr.CreatedAt.Format(time.DateOnly)
+		var date string
+		if pr.MergedAt != nil {
+			date = pr.MergedAt.Format(time.DateOnly)
+		} else {
+			// Fallback to created date if merged date is somehow missing
+			date = pr.CreatedAt.Format(time.DateOnly)
+		}
 		title := strings.ReplaceAll(*pr.Title, "|", "\\|")
 		url := *pr.HTMLURL
 		sb.WriteString(fmt.Sprintf("| %s | %s | [PR link](%s) |\n", date, title, url))
@@ -263,36 +289,8 @@ func updateMainReadme(owner, repo string) {
 		return
 	}
 
-	// Find the open source contributions section
-	contributionsSection := "- Open Source Contributions"
-	contributionsIndex := strings.Index(readmeContent, contributionsSection)
-
-	if contributionsIndex == -1 {
-		fmt.Println("Could not find 'Open Source Contributions' section in README")
-		return
-	}
-
-	// Find the line with "[Add more projects as needed]"
-	projectsLine := "  - [Add more projects as needed]"
-	projectsIndex := strings.Index(readmeContent, projectsLine)
-
-	if projectsIndex == -1 {
-		fmt.Println("Could not find placeholder for adding more projects")
-		return
-	}
-
-	// Add the new repository entry before the placeholder
-	dirName := strings.Title(repo)
-	newRepoEntry := fmt.Sprintf("  - [%s - %s](https://github.com/akagami-harsh/Experience/blob/main/%s/README.md)\n", owner, repo, dirName)
-
-	updatedContent := readmeContent[:projectsIndex] + newRepoEntry + readmeContent[projectsIndex:]
-
-	// Write the updated content ack to the file
-	err = os.WriteFile(readmePath, []byte(updatedContent), 0644)
-	if err != nil {
-		fmt.Printf("Error updating main README: %v\n", err)
-		return
-	}
-
-	fmt.Println("Updated main README with new repository")
+	// Since the current README structure is manually managed and the pipelines entry
+	// is already present, we'll just inform the user
+	fmt.Printf("Note: Please manually add [%s - %s] to the main README.md if not already present\n", owner, repo)
+	fmt.Println("Current README structure appears to be manually managed")
 }
