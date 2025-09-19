@@ -1,15 +1,18 @@
 # Experience
 
-This repository contains an overview of all the pull requests I have created/merged across various open source projects.
+This repository contains an overview of all the pull requests I have created/merged across various open source projects, highlighting my journey through prestigious programs like Google Summer of Code and Linux Foundation Mentorship.
 
 ## Table of Content
 
 - Open Source Contributions
   - [CNCF - JaegerTracing](https://github.com/akagami-harsh/Experience/blob/main/Jaeger/README.md)
-  - [kubeflow - manifests](https://github.com/akagami-harsh/Experience/blob/main/Manifests/README.md)
+  - Kubeflow Ecosystem
+    - [kubeflow - manifests](https://github.com/akagami-harsh/Experience/blob/main/kubeflow/manifests/README.md)
+    - [kubeflow - pipelines](https://github.com/akagami-harsh/Experience/blob/main/kubeflow/pipelines/README.md)
 
 - Internship Experiences
   - [LFX Mentorship - Jaeger](#lfx-mentorship)
+  - [Google Summer of Code - Kubeflow](#google-summer-of-code)
 
 ## Internship Experiences
 
@@ -35,6 +38,43 @@ You can find more details about my specific contributions and experiences in the
 - Databases
 - Microservices monitoring and tracing
 - Performance testing and optimization
+
+### Google Summer of Code
+
+Google Summer of Code (GSoC) is Google's annual program that connects university students with open source organizations for paid software development internships. I participated in GSoC 2025 with the Kubeflow organization.
+
+#### My GSoC Journey with Kubeflow
+
+During my GSoC internship with [Kubeflow](https://github.com/kubeflow) (January 2025 - Present), I focused on enhancing the security, infrastructure, and developer experience of the Kubeflow ecosystem. My key contributions included:
+
+**🔐 Security Enhancements:**
+- Designed and implemented production-grade deployment of SeaweedFS with multi-tenancy (namespace isolation) as a secure replacement for Minio
+- Enhanced security by enforcing Pod Security Standards (PSS) baseline/restricted policies across all Kubeflow components including Notebooks, Katib, KServe, and Istio ingress gateway
+- Implemented comprehensive security testing and validation frameworks
+
+**🚀 Infrastructure & CI/CD:**
+- Migrated Istio images from DockerHub to Google Container Registry (GCR) for improved reliability and security
+- Enhanced CI/CD workflows in the kubeflow/manifests repository with automated code quality checks
+- Implemented pre-commit hooks for automated linting, formatting, and validation
+- Refactored shared testing components to improve maintainability and reduce code duplication
+
+**🔧 Developer Experience:**
+- Extended Kubeflow Pipelines (KFP) environment variables for better configuration management
+- Improved documentation and developer onboarding processes
+- Contributed to migration efforts for the kubeflow/dashboard repository
+- Fixed critical issues in cluster deployment configurations
+
+You can find detailed information about my contributions in the [Kubeflow Manifests](https://github.com/akagami-harsh/Experience/blob/main/kubeflow/manifests/README.md) and [Kubeflow Pipelines](https://github.com/akagami-harsh/Experience/blob/main/kubeflow/pipelines/README.md) sections.
+
+#### Skills & Technologies Used
+
+- **Cloud Native**: Kubernetes, Kustomize, Helm
+- **Security**: Pod Security Standards, RBAC, Multi-tenancy
+- **Storage**: SeaweedFS, Persistent Volumes, Storage Classes
+- **Service Mesh**: Istio, Ingress Controllers
+- **CI/CD**: GitHub Actions, Pre-commit hooks, Automated testing
+- **Languages**: Go, Python, YAML
+- **Tools**: Docker, kubectl, kustomize
 
 ## About This Repository
 
