@@ -29,6 +29,7 @@ View all merged pull requests by me at a glance: [VIEW ALL MERGED PULL REQUESTS]
 
 | Date Merged | Title | Pull Request Link |
 | ----------- | ----- | ----------------- |
+| 2025-10-28 | Add pod postStart lifecycle for SeaweedFS and remove Job initializer | [PR link](https://github.com/kubeflow/pipelines/pull/12387) |
 | 2025-10-15 | chore: Add artifact proxy deployment to sync.py | [PR link](https://github.com/kubeflow/pipelines/pull/12285) |
 | 2025-09-14 | feat: Make artifact proxy opt-in via ARTIFACTS_PROXY_ENABLED configuration | [PR link](https://github.com/kubeflow/pipelines/pull/12242) |
 | 2025-08-29 | Fix seaweedfs flaky test | [PR link](https://github.com/kubeflow/pipelines/pull/12175) |
