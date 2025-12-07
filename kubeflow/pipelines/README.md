@@ -29,6 +29,7 @@ View all merged pull requests by me at a glance: [VIEW ALL MERGED PULL REQUESTS]
 
 | Date Merged | Title | Pull Request Link |
 | ----------- | ----- | ----------------- |
+| 2025-12-01 | chore: remove duplicate default-allow-same-namespace network policy | [PR link](https://github.com/kubeflow/pipelines/pull/12492) |
 | 2025-11-04 | chore: update SeaweedFS to 4.00 and make it more robust | [PR link](https://github.com/kubeflow/pipelines/pull/12406) |
 | 2025-10-28 | Add pod postStart lifecycle for SeaweedFS and remove Job initializer | [PR link](https://github.com/kubeflow/pipelines/pull/12387) |
 | 2025-10-15 | chore: Add artifact proxy deployment to sync.py | [PR link](https://github.com/kubeflow/pipelines/pull/12285) |
